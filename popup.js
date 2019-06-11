@@ -6,6 +6,12 @@ document.getElementById('submitBtn').onclick = function() {
     });
 };
 
+chrome.storage.sync.get('endDate', function(savedEndDate) {
+  if(savedEndDate != undefined && savedEndDate != '') {
+    document.getElementById('endDate').valueAsDate = new Date(savedEndDate.endDate);
+  }
+});
+
 function setDayCounter(endDate) {
   var today = new Date();
   var one_day = 1000*60*60*24;

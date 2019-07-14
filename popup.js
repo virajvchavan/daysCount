@@ -13,7 +13,7 @@ window.addEventListener('keyup', function (e) {
     }
 }, false);
 
-// shows days left in the popup
+// get saved date from storage
 chrome.storage.sync.get('endDate', function(savedEndDate) {
   if(savedEndDate != undefined && savedEndDate != '') {
     document.getElementById('endDate').valueAsDate = new Date(savedEndDate.endDate);
@@ -26,11 +26,12 @@ function setBadgeValue(endDate) {
 }
 
 function showCounterOnPopup(endDate) {
-  document.getElementById('days-left').innerHTML = getDaysLeft(new Date(endDate));
-  document.getElementById('days-left').classList.add('updated-date');
+  var daysLeftElement = document.getElementById('days-left');
+  daysLeftElement.innerHTML = getDaysLeft(new Date(endDate));
+  daysLeftElement.classList.add('updated-date');
   setTimeout(function() {
-    document.getElementById('days-left').classList.remove('updated-date');
-  }, 1000)
+    daysLeftElement.classList.remove('updated-date');
+  }, 1000);
 }
 
 function getDaysLeft(endDate) {

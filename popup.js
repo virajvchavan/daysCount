@@ -7,6 +7,12 @@ document.getElementById('submitBtn').onclick = function() {
     });
 };
 
+window.addEventListener('keyup', function (e) {
+    if (e.keyCode === 13) {
+        document.getElementById('submitBtn').click();
+    }
+}, false);
+
 // shows days left in the popup
 chrome.storage.sync.get('endDate', function(savedEndDate) {
   if(savedEndDate != undefined && savedEndDate != '') {

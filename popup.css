@@ -63,3 +63,20 @@ input {
 .center {
   text-align: center;
 }
+
+.info {
+  margin-top: 15px;
+}
+
+#days-left {
+  font-size: 22px;
+}
+
+.countdown {
+  margin-bottom: 12px;
+}
+
+.text-info {
+  font-size: 11px;
+  margin-top: 6px;
+}

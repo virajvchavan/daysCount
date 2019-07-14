@@ -27,6 +27,10 @@ function setBadgeValue(endDate) {
 
 function showCounterOnPopup(endDate) {
   document.getElementById('days-left').innerHTML = getDaysLeft(new Date(endDate));
+  document.getElementById('days-left').classList.add('updated-date');
+  setTimeout(function() {
+    document.getElementById('days-left').classList.remove('updated-date');
+  }, 1000)
 }
 
 function getDaysLeft(endDate) {

@@ -1,9 +1,13 @@
+@keyframes blink {
+  to { color: green; }
+}
+
 body {
   margin: 20px;
 }
 .btn {
   display: block;
-  margin: 13px auto;
+  margin: 5px auto;
   padding: 0;
   overflow: hidden;
   border-width: 0;
@@ -70,6 +74,8 @@ input {
 
 #days-left {
   font-size: 22px;
+  transition: all 0.5s ease;
+  color: #6200ee;
 }
 
 .countdown {
@@ -79,4 +85,9 @@ input {
 .text-info {
   font-size: 11px;
   margin-top: 6px;
+}
+
+.updated-date {
+  color: green !important;
+  font-size: 23px !important;
 }

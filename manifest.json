@@ -9,5 +9,8 @@
   },
   "background": {
     "scripts": ["background.js"]
+  },
+  "icons": {
+    "120": "icon.png"
   }
 }

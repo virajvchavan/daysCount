@@ -50,6 +50,10 @@ body {
   transition: width .2s ease-out, padding-top .2s ease-out;
 }
 
+.btn.disabled {
+  background-color: #6200eec7;
+}
+
 /* Styles, not important */
 *, *:before, *:after {
   box-sizing: border-box;

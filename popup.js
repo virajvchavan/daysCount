@@ -4,6 +4,10 @@ document.getElementById('submitBtn').onclick = function() {
     chrome.storage.sync.set({endDate: endDate}, function() {
       setBadgeValue(new Date(endDate));
       showCounterOnPopup(new Date(endDate));
+      document.getElementById('submitBtn').classList.add('disabled');
+      setTimeout(function() {
+        document.getElementById('submitBtn').classList.remove('disabled');
+      }, 400);
     });
 };
 
@@ -22,7 +26,9 @@ chrome.storage.sync.get('endDate', function(savedEndDate) {
 });
 
 function setBadgeValue(endDate) {
-  chrome.browserAction.setBadgeText({text: '' + getDaysLeft(endDate)});
+  var daysLeft = getDaysLeft(endDate);
+  var daysToShow = daysLeft < 10000 ? daysLeft : '10 k+'
+  chrome.browserAction.setBadgeText({text: '' + daysToShow});
 }
 
 function showCounterOnPopup(endDate) {
@@ -31,6 +37,7 @@ function showCounterOnPopup(endDate) {
   daysLeftElement.classList.add('updated-date');
   setTimeout(function() {
     daysLeftElement.classList.remove('updated-date');
+    document.getElementById('submitBtn').classList.remove('disabled');
   }, 1000);
 }
 

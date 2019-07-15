@@ -1,8 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Days Until",
+  "name": "Days Until (Days Countdown)",
+  "short_name": "Days Until",
   "version": "1.0",
-  "description": "Displays the number of days until a specified date right in the toolbar.",
+  "description": "Displays the number of days until a specified date right in the toolbar. (Days ountdown)",
   "permissions": ["storage"],
   "browser_action": {
     "default_title": "Days until",

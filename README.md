@@ -18,4 +18,4 @@ Easily change the date by clicking on the extension logo.
 
 This also syncs between browsers. Like if you login to same chrome account on two different PCs, it'll show the same results!
 
-![Pitch](pitch.jpeg?raw=true)
+![](https://raw.githubusercontent.com/virajvchavan/daysuntil/master/pitch.jpg)

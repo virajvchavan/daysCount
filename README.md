@@ -6,3 +6,16 @@
 - Go to `chrome://extensions/`
 - Click on **Load Unpacked**
 - Select the downloaded folder
+
+# Description
+Displays the number of days until a specified date right in the toolbar.
+
+It's a countdown for days that is ALWAYS visible right in your Chrome toolbar, next to where you type your URLs.
+
+Helps you track the number of days until an important day that you have been waiting for.
+
+Easily change the date by clicking on the extension logo.
+
+This also syncs between browsers. Like if you login to same chrome account on two different PCs, it'll show the same results!
+
+![Pitch](pitch.jpeg?raw=true)

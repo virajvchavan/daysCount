@@ -1,7 +1,10 @@
 # daysuntil
  Chrome extension that shows number of days left until a certain date (Right next to the URL bar )
 
-# Installation
+# Install
+https://chrome.google.com/webstore/detail/days-until-days-countdown/eddnhnjblfligfijgckclhnkmilmdhij
+
+# Developement
 - Download this repository.
 - Go to `chrome://extensions/`
 - Click on **Load Unpacked**

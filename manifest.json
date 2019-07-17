@@ -2,15 +2,16 @@
   "manifest_version": 2,
   "name": "Days Until (Days Countdown)",
   "short_name": "Days Until",
-  "version": "1.0",
-  "description": "Displays the number of days until a specified date right in the toolbar. (Days ountdown)",
+  "version": "1.1",
+  "description": "Displays the number of days until a specified date right in the toolbar. (Days Countdown)",
   "permissions": ["storage"],
   "browser_action": {
-    "default_title": "Days until",
+    "default_title": "Click here to set the date",
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "persistent": false
   },
   "icons": {
     "120": "icon.png"

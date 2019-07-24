@@ -1,16 +1,20 @@
-// this runs once when chrome starts
-
 chrome.runtime.onInstalled.addListener(function() {
-  console.log('installed');
+  init();
 });
 
-chrome.storage.sync.get('endDate', function(savedEndDate) {
-  if(savedEndDate != undefined && savedEndDate != '' && savedEndDate.endDate != undefined && savedEndDate.endDate != '') {
-    setDayCounter(new Date(savedEndDate.endDate));
-  } else {
-    chrome.browserAction.setBadgeText({text: 'Click'});
-  }
+chrome.runtime.onStartup.addListener(function () {
+  init();
 });
+
+function init() {
+  chrome.storage.sync.get('endDate', function(savedEndDate) {
+    if(savedEndDate != undefined && savedEndDate != '' && savedEndDate.endDate != undefined && savedEndDate.endDate != '') {
+      setDayCounter(new Date(savedEndDate.endDate));
+    } else {
+      chrome.browserAction.setBadgeText({text: 'Click'});
+    }
+  });
+}
 
 function setDayCounter(endDate) {
   var today = new Date();

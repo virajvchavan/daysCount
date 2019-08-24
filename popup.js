@@ -21,7 +21,7 @@ document.getElementById('submitBtn').onclick = function() {
       document.getElementById('endDate').classList.add('error-input');
     }
 
-    _gaq.push(['_trackEvent', 'btn clicked']);
+    _gaq.push(['_trackEvent', 'Save Button', 'clicked']);
 };
 
 window.addEventListener('keyup', function (e) {

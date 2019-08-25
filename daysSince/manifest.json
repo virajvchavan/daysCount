@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Days Since (Days Count)",
+  "short_name": "Days Since",
+  "version": "1.0",
+  "description": "Displays the number of days since a specified date right in the toolbar. (Days Count)",
+  "permissions": ["storage"],
+  "browser_action": {
+    "default_title": "Click here to set the date",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": {
+    "128": "icon128.png",
+    "48": "icon48.png",
+    "16": "icon16.png"
+  }
+}

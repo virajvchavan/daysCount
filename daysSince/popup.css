@@ -1,0 +1,113 @@
+@keyframes blink {
+  to { color: green; }
+}
+
+body {
+  margin: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn {
+  display: block;
+  margin: 5px auto;
+  padding: 0;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  background-color: #AD1457;
+  color: #ecf0f1;
+  font-weight: bold;
+  transition: background-color .3s;
+  cursor: pointer;
+}
+.btn:hover, .btn:focus {
+  background-color: #880E4F;
+}
+.btn span {
+  display: block;
+  padding: 7px 24px;
+}
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236, 240, 241, .3);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+.btn.disabled {
+  background-color: #E91E63;
+}
+
+/* Styles, not important */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+input {
+  width: 100%;
+  padding: 6px 9px;
+  margin: 13px auto;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.center {
+  text-align: center;
+}
+
+.info {
+  margin-top: 15px;
+}
+
+#days-left {
+  font-size: 22px;
+  transition: all 0.5s ease;
+  color: #880E4F;
+}
+
+.countdown {
+  margin-bottom: 12px;
+}
+
+.text-info {
+  font-size: 11px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.updated-date {
+  color: #880E4F !important;
+  font-size: 23px !important;
+}
+
+#no-date-notice {
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #360084;
+}
+
+.error-input {
+  border-color: red;
+}

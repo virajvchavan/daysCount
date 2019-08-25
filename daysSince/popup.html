@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link rel="stylesheet" href="popup.css">
+    </head>
+    <body>
+      <div class="center">
+        <div id="no-date-notice" class="hidden">
+          Select a date first!
+        </div>
+        <div class="countdown">
+          <div class="text-info">It's been</div>
+          <div id="days-left"></div>
+          <div class="text-info">Days!</div>
+        </div>
+        <hr>
+        <div class="info">Counting the days since</div>
+        <input type=date id='startDate'>
+        <button class="btn" id="submitBtn"> <span>SAVE</span></button>
+      </div>
+      <script src='popup.js'></script>
+    </body>
+</html>

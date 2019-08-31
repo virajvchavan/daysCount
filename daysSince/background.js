@@ -7,7 +7,7 @@ chrome.runtime.onStartup.addListener(function () {
 });
 
 function init() {
-  chrome.browserAction.setBadgeBackgroundColor({color: "#AD1457"});
+  chrome.browserAction.setBadgeBackgroundColor({color: "#1B5E20"});
   chrome.storage.sync.get('startDate', function(savedstartDate) {
     if(savedstartDate != undefined && savedstartDate != '' && savedstartDate.startDate != undefined && savedstartDate.startDate != '') {
       setDayCounter(new Date(savedstartDate.startDate));

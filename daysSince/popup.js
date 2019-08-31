@@ -1,4 +1,4 @@
-chrome.browserAction.setBadgeBackgroundColor({color: "#AD1457"});
+chrome.browserAction.setBadgeBackgroundColor({color: "#1B5E20"});
 
 document.getElementById('submitBtn').onclick = function() {
     let startDate = document.getElementById('startDate').value;

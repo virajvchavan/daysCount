@@ -1,5 +1,18 @@
 chrome.browserAction.setBadgeBackgroundColor({color: "#1B5E20"});
 
+// Google analytics
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-146427806-2']);
+_gaq.push(['_trackPageview']);
+
+window.onload = function() {
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+}
+
 document.getElementById('submitBtn').onclick = function() {
     let startDate = document.getElementById('startDate').value;
 
@@ -9,6 +22,8 @@ document.getElementById('submitBtn').onclick = function() {
     } else {
       document.getElementById('startDate').classList.add('error-input');
     }
+
+    _gaq.push(['_trackEvent', 'Save Button', 'clicked']);
 };
 
 window.addEventListener('keyup', function (e) {

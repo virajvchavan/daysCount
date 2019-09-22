@@ -63,7 +63,7 @@ body {
 *, *:before, *:after {
   box-sizing: border-box;
 }
-input {
+input#endDate, input#eventName {
   width: 100%;
   padding: 6px 9px;
   margin: 13px auto;
@@ -109,4 +109,12 @@ input {
 
 .error-input {
   border-color: red;
+}
+
+input#eventName {
+  border-color: #eaeaea;
+  text-align: center;
+  color: #21625c;
+  font-weight: 600;
+  width: fit-content;
 }

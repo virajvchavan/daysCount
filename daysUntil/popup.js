@@ -1,34 +1,42 @@
-// saves the date
-document.getElementById('submitBtn').onclick = function() {
-    let endDate = document.getElementById('endDate').value;
+chrome.browserAction.setBadgeBackgroundColor({color: "#294fa7"});
 
-    if (endDate != undefined && endDate != '') {
-      storeEndDate(endDate);
-      document.getElementById('endDate').classList.remove('error-input');
-    } else {
-      document.getElementById('endDate').classList.add('error-input');
-    }
+// saves the data to chrome storage
+document.getElementById('submitBtn').onclick = function() {
+  let endDate = document.getElementById('endDate').value;
+  let eventName = document.getElementById('eventName').value;
+
+  if (endDate != undefined && endDate != '') {
+    storeCounterData(endDate, eventName);
+    document.getElementById('endDate').classList.remove('error-input');
+  } else {
+    document.getElementById('endDate').classList.add('error-input');
+  }
 };
 
 window.addEventListener('keyup', function (e) {
-    if (e.keyCode === 13) {
-        document.getElementById('submitBtn').click();
-    }
+  if (e.keyCode === 13) {
+      document.getElementById('submitBtn').click();
+  }
 }, false);
 
-// get saved date from storage
-chrome.storage.sync.get('endDate', function(savedEndDate) {
-  if(savedEndDate != undefined && savedEndDate != '' && savedEndDate.endDate) {
-    document.getElementById('endDate').valueAsDate = new Date(savedEndDate.endDate);
-    showCounterOnPopup(savedEndDate.endDate);
+document.getElementById('eventName').addEventListener('change', function (e) {
+  document.getElementById('submitBtn').click();
+});
+
+// get saved date and evetName from storage
+chrome.storage.sync.get(['endDate', 'eventName'], function(savedCounterData) {
+  if(savedCounterData != undefined && savedCounterData != '' && savedCounterData.endDate) {
+    document.getElementById('endDate').valueAsDate = new Date(savedCounterData.endDate);
+    showCounterOnPopup(savedCounterData.endDate);
+    document.getElementById('eventName').value = savedCounterData.eventName;
     showCountDown();
   } else {
     hideCountDown();
   }
 });
 
-function storeEndDate(endDate) {
-  chrome.storage.sync.set({endDate: endDate}, function() {
+function storeCounterData(endDate, eventName) {
+  chrome.storage.sync.set({endDate: endDate, eventName: eventName}, function() {
     setBadgeValue(new Date(endDate));
     showCounterOnPopup(new Date(endDate));
 

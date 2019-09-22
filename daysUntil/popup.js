@@ -2,15 +2,7 @@ chrome.browserAction.setBadgeBackgroundColor({color: "#294fa7"});
 
 // saves the data to chrome storage
 document.getElementById('submitBtn').onclick = function() {
-  let endDate = document.getElementById('endDate').value;
-  let eventName = document.getElementById('eventName').value;
-
-  if (endDate != undefined && endDate != '') {
-    storeCounterData(endDate, eventName);
-    document.getElementById('endDate').classList.remove('error-input');
-  } else {
-    document.getElementById('endDate').classList.add('error-input');
-  }
+  saveTheInputs();
 };
 
 window.addEventListener('keyup', function (e) {
@@ -20,7 +12,7 @@ window.addEventListener('keyup', function (e) {
 }, false);
 
 document.getElementById('eventName').addEventListener('change', function (e) {
-  document.getElementById('submitBtn').click();
+  saveTheInputs();
 });
 
 // get saved date and evetName from storage
@@ -28,12 +20,28 @@ chrome.storage.sync.get(['endDate', 'eventName'], function(savedCounterData) {
   if(savedCounterData != undefined && savedCounterData != '' && savedCounterData.endDate) {
     document.getElementById('endDate').valueAsDate = new Date(savedCounterData.endDate);
     showCounterOnPopup(savedCounterData.endDate);
-    document.getElementById('eventName').value = savedCounterData.eventName;
+
+    if (savedCounterData.eventName) {
+      document.getElementById('eventName').value = savedCounterData.eventName;
+    }
+
     showCountDown();
   } else {
     hideCountDown();
   }
 });
+
+function saveTheInputs() {
+  let endDate = document.getElementById('endDate').value;
+  let eventName = document.getElementById('eventName').value;
+
+  if (endDate != undefined && endDate != '') {
+    storeCounterData(endDate, eventName);
+    document.getElementById('endDate').classList.remove('error-input');
+  } else {
+    document.getElementById('endDate').classList.add('error-input');
+  }
+}
 
 function storeCounterData(endDate, eventName) {
   chrome.storage.sync.set({endDate: endDate, eventName: eventName}, function() {

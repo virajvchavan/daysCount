@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Days Until (Days Countdown)",
   "short_name": "Days Until",
-  "version": "1.22",
+  "version": "1.3",
   "description": "Displays the number of days until a specified date right in the toolbar. (Days Countdown)",
   "permissions": ["storage"],
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",

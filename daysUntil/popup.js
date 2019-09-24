@@ -22,11 +22,13 @@ document.getElementById('submitBtn').onclick = function() {
 window.addEventListener('keyup', function (e) {
   if (e.keyCode === 13) {
       saveTheInputs();
+      _gaq.push(['_trackEvent', 'Enter Key', 'pressed']);
   }
 }, false);
 
 document.getElementById('eventName').addEventListener('change', function (e) {
   saveTheInputs();
+  _gaq.push(['_trackEvent', 'EventNameChanged', 'value']);
 });
 
 // get saved date and evetName from storage
